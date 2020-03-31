@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  sql_db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: "db"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+
+  nosql_db:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - ./mongo-volume:/data/db
+    ports:
+      - "27017-27019:27017-27019"
+    expose:
+      - "27017-27019"
+
+  graph_db:
+    image: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/import:/var/lib/neo4j/import
+      - ./neo4j/plugins:/plugins
+    environment:
+    - NEO4J_AUTH=neo4j/test

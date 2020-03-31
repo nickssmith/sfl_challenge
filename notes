@@ -1,0 +1,11 @@
+run the docker compose to start all db
+
+then populate scripts as part 1
+
+
+notes to connect to dbs
+
+mysql -uroot -h 127.0.0.1 --port=3306 -p
+
+mongo -u user -p password #TODO match my shell version
+but for now mongo just works

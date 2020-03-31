@@ -1,0 +1,6 @@
+username : password : role : projects : full_name : birthday
+'doej1' : 'password' : 'dev' : "['a','b','c']" : 'Jane Doe' :  '1990-09-01'
+'doej2' : 'password' : 'dev' : "['a','c']" : 'John Doe' : '1990-10-01'
+'smithb' : 'password' : 'dev' : "['a','d']" : 'Bob Smith' : '1983-09-01'
+'smithn' : 'password' : 'admin' : "[]" : 'Nick Smith' : '1991-09-01'
+'parkerm' : 'password' : 'project manager' : "['a','b','c']" : 'Marge Parker' : '1990-08-01'

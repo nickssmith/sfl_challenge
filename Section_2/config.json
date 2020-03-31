@@ -1,0 +1,8 @@
+{
+  "db": "db",
+  "db_addr": "192.168.2.6",
+  "db_user": "user",
+  "db_password": "password",
+  "db_root_user": "root",
+  "db_root_password": "password"
+}

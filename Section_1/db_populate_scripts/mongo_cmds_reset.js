@@ -1,0 +1,2 @@
+use exdb
+db.dropDatabase()
