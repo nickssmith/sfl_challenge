@@ -5,7 +5,7 @@ set -e
 TOPIC_TO_MAKE="ntest"
 rm -rf kafka_2.12-2.4.1
 
-#wget https://mirrors.gigenet.com/apache/kafka/2.4.1/kafka_2.12-2.4.1.tgz
+wget https://mirrors.gigenet.com/apache/kafka/2.4.1/kafka_2.12-2.4.1.tgz
 tar -xzf kafka_2.12-2.4.1.tgz
 
 cd kafka_2.12-2.4.1

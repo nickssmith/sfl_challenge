@@ -36,3 +36,7 @@ Order to run
 1. Run the "start_servers.sh" in 1 terminal window, it will open 2 new windows (for easier debug of logs)
 1. Run the "run_kafka_cmds.sh" in another window, it will open another window for the consumer then make a prompt to enter messages
 
+##PART 4
+
+Google for a docker instance of spark, found one [here](https://hub.docker.com/r/bitnami/spark/)
+
