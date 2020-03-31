@@ -9,12 +9,9 @@ port = "27017"
 
 mongo_uri = 'mongodb://{}:{}@{}:{}/'.format(username, password, addr, port)
 
-#import pymongo
 conn = pymongo.MongoClient(mongo_uri)
 
 db = conn['exdb']
-
-filter = {"name": {"$regex": r"^(?!system\.)"}}
 
 coll = db['users']
 
