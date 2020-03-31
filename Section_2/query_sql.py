@@ -1,4 +1,5 @@
 import mysql.connector
+import pandas
 import os
 import json
 import csv
@@ -57,7 +58,8 @@ class db_connection():
 
     def get_connection(self):
         conn = mysql.connector.connect(user=self.db_user, password=self.db_password,
-                                       host=self.db_addr, buffered=True, database=self.db,auth_plugin='mysql_native_password')
+                                       host=self.db_addr, buffered=True, database=self.db,
+                                       auth_plugin='mysql_native_password')
         return conn
 
     def __init__(self):
@@ -67,10 +69,13 @@ class db_connection():
         self.db_password = self.get_db_password()
         self.db_root_user = self.get_db_root_user()
         self.db_root_password = self.get_db_root_password()
-        print("hio")
         self.connection = self.get_connection()
 
 
 conn = db_connection()
-print(conn)
-print(conn.run_sql("show databases;"))
+
+sql_cmd = "select * from users;"
+SQL_Query = pandas.read_sql_query(sql_cmd,conn.connection)
+
+df = pandas.DataFrame(SQL_Query, columns=["username", "password", "role", "projects", "full_name", "birthday"])
+print(df)
