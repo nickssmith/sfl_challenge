@@ -1,7 +1,6 @@
 import pandas
 import pymongo
 
-
 username = "root"
 password = "password"
 addr = "localhost"

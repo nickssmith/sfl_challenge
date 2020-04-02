@@ -75,7 +75,7 @@ class db_connection():
 conn = db_connection()
 
 sql_cmd = "select * from users;"
-SQL_Query = pandas.read_sql_query(sql_cmd,conn.connection)
+SQL_Query = pandas.read_sql_query(sql_cmd, conn.connection)
 
 df = pandas.DataFrame(SQL_Query, columns=["username", "password", "role", "projects", "full_name", "birthday"])
 print(df)

@@ -1,11 +1,11 @@
 import pandas
+from py2neo import Graph, NodeMatcher
 
 
 username = "neo4j"
 password = "test"
 uri = "bolt://0.0.0.0:7687"
 
-from py2neo import Graph,NodeMatcher
 graph = Graph("bolt://localhost:7687", auth=("neo4j", "test"))
 
 try:
@@ -14,18 +14,16 @@ try:
 except Exception:
     print('not ok')
 
-
-
 matcher = NodeMatcher(graph)
 a = matcher.match("username")
 print(len(a))
-for b in range(len(a)-1):
+for b in range(len(a) - 1):
     print(a.skip(b).first())
 
-#TODO finish reset
+# TODO finish reset
 print("done")
-#Hi.__init__()
+# Hi.__init__()
 # Expand the cursor and construct the DataFrame
-#df = pandas.DataFrame(list(cursor))
+# df = pandas.DataFrame(list(cursor))
 
-#print(df)
+# print(df)
